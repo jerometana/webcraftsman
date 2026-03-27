@@ -57,39 +57,47 @@ export default function StorySection({ posts = [] }: StorySectionProps) {
       </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 w-full max-w-7xl">
-        {displayItems.map((item, idx) => (
-          <motion.div
-            key={idx}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ delay: idx * 0.1, duration: 0.6, ease: "easeOut" }}
-            className="group cursor-pointer flex flex-col"
-          >
-            <div
-              className={`w-full aspect-[16/10] rounded-3xl overflow-hidden ${item.imgClass}`}
+        {displayItems.map((item, idx) => {
+          const isFirst = idx === 0;
+
+          return (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ delay: idx * 0.1, duration: 0.6, ease: "easeOut" }}
+              className={`group cursor-pointer flex flex-col ${
+                isFirst ? "md:flex-row md:col-span-2 gap-8 md:items-start" : ""
+              }`}
             >
-              {item.image?.url && (
-                <img
-                  src={item.image.url}
-                  alt={item.image.alt || item.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              )}
-            </div>
-            <div className="p-8 flex flex-col items-start text-left">
-              <span className="text-xl font-[Outfit] font-medium text-primary mb-6">
-                {item.tag}
-              </span>
-              <h3 className="text-3xl font-medium mb-6 leading-snug group-hover:text-blue-600 transition-colors">
-                {item.title}
-              </h3>
-              <span className="text-xl text-text-secondary font-medium">
-                {item.date}
-              </span>
-            </div>
-          </motion.div>
-        ))}
+              <div
+                className={`w-full aspect-video rounded-3xl overflow-hidden ${item.imgClass}`}
+              >
+                {item.image?.url ? (
+                  <img
+                    src={item.image.url}
+                    alt={item.image.alt || item.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-blue-600 transition-transform duration-500 group-hover:scale-105" />
+                )}
+              </div>
+              <div className="p-8 flex flex-col items-start text-left">
+                <span className="text-xl font-[Outfit] font-medium text-primary mb-6">
+                  {item.tag}
+                </span>
+                <h3 className="text-3xl font-medium mb-6 leading-snug group-hover:text-blue-600 transition-colors">
+                  {item.title}
+                </h3>
+                <span className="text-xl text-text-secondary font-medium">
+                  {item.date}
+                </span>
+              </div>
+            </motion.div>
+          );
+        })}
       </div>
 
       <motion.div

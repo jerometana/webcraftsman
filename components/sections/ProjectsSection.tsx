@@ -37,7 +37,7 @@ export default function ProjectsSection() {
           <motion.div
             key={idx}
             className="flex flex-col gap-4"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ delay: idx * 0.1, duration: 0.6, ease: "easeOut" }}

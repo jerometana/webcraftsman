@@ -12,7 +12,7 @@ export default function WhyUsSection() {
         className="text-center max-w-4xl m-auto"
       >
         <span className="inline-block px-4 py-1.5 mb-4 text-md font-semibold tracking-widest text-blue-600 uppercase">
-          ทำไมต้องเรา
+          เราดียังไง
         </span>
         <h2 className="text-4xl md:text-6xl font-medium tracking-tight leading-tight mb-16">
           สะกดทุกสายตา

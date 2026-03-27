@@ -16,7 +16,8 @@ export default function HowItWorksSection() {
             วิธีรับบริการ
           </span>
           <h2 className="text-4xl md:text-6xl font-medium tracking-tight leading-tight mb-16">
-            ขั้นตอนง่าย ๆ <span className="text-text-secondary">ชัดเจน</span>
+            ขั้นตอนง่าย ๆ <br />
+            <span className="text-text-secondary">ชัดเจนแจ่มแจ้ง</span>
           </h2>
         </div>
       </motion.div>
