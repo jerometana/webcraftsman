@@ -2,6 +2,7 @@
 
 import React, { useRef, ReactNode } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import DarkVeil from "./DarkVeil";
 
 interface ScrollExpansionProps {
   children?: ReactNode;
@@ -11,7 +12,7 @@ interface ScrollExpansionProps {
 
 export default function ScrollExpansion({
   children,
-  containerClassName = "bg-primary flex flex-col items-center justify-center text-white relative shadow-2xl overflow-hidden",
+  containerClassName = "bg-black flex flex-col items-center justify-center text-white relative shadow-2xl overflow-hidden",
   contentClassName = "z-10 text-center px-4 max-w-3xl",
 }: ScrollExpansionProps) {
   const sectionRef = useRef<HTMLElement>(null);
@@ -71,6 +72,17 @@ export default function ScrollExpansion({
               borderRadius: borderRadius,
             }}
           >
+            <div className="w-screen h-screen absolute top-0 left-0">
+              <DarkVeil
+                hueShift={15}
+                noiseIntensity={0}
+                scanlineIntensity={0}
+                speed={3}
+                scanlineFrequency={0}
+                warpAmount={0}
+                resolutionScale={1}
+              />
+            </div>
             {/* เนื้อหาด้านในใช้ motion.div เช่นกัน */}
             <motion.div
               className={contentClassName}

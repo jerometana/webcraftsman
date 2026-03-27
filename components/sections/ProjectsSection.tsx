@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 
 export default function ProjectsSection() {
   return (
-    <section className="p-8 pb-30 mx-auto">
+    <section className="p-8 pb-30 mx-auto bg-black">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8">
         {[
           {
@@ -40,7 +40,7 @@ export default function ProjectsSection() {
                   </div>
                 )}
               </div>
-              <span className="font-medium font-[Outfit] text-2xl">
+              <span className="font-medium font-[Outfit] text-white text-2xl">
                 {project.name}
               </span>
             </div>

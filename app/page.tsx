@@ -8,6 +8,7 @@ import TestimonialSection from "@/components/sections/TestimonialSection";
 import StorySection from "@/components/sections/StorySection";
 import Footer from "@/components/Footer";
 import { client } from "@/lib/sanity";
+import DarkVeil from "@/components/DarkVeil";
 
 const POSTS_QUERY = `*[ _type == "post" ] | order(_createdAt desc)[0...4] {
   _id,
