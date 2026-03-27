@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useRef, ReactNode } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
@@ -58,7 +60,7 @@ export default function ScrollExpansion({
   return (
     <div className="overflow-x-hidden">
       {/* --- Section ที่ทำ Scroll Expand Effect --- */}
-      <section ref={sectionRef} className="h-screem relative">
+      <section ref={sectionRef} className="h-screen relative">
         <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
           {/* ใช้ motion.div และแนบ Style ที่ได้จาก useTransform */}
           <motion.div

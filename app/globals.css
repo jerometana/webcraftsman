@@ -7,5 +7,5 @@
   --color-foreground: #F5F5F7;
   --color-text-primary: #000000;
   --color-text-secondary: #87878F;
-  --font-sans: var(--font-manrope), var(--font-prompt), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-sans: var(--font-outfit), var(--font-prompt), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }

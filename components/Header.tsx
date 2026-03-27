@@ -6,9 +6,9 @@ import Logo from "./Logo";
 export default function Header() {
   return (
     <div className="sticky top-3 left-0 right-0 z-50 flex justify-center w-full">
-      <nav className="grid grid-cols-3 items-center justify-between w-[90%] max-w-2xl pl-5 pr-2.5 py-2.5 bg-foreground/80 backdrop-blur-md rounded-full">
+      <nav className="flex items-center justify-between w-[90%] max-w-2xl pl-5 pr-2.5 py-2.5 bg-foreground/80 backdrop-blur-md rounded-full">
         {/* Logo */}
-        <Link href="/" className="flex items-center" aria-label="Home">
+        <Link href="/" className="flex items-center w-1/5" aria-label="Home">
           <Logo className="w-10 fill-primary" />
         </Link>
 
@@ -18,29 +18,29 @@ export default function Header() {
             href="#service"
             className="font-medium text-[#4B5563] hover:text-[#111827] transition-colors"
           >
-            Service
+            บริการ
           </Link>
           <Link
             href="#project"
             className="font-medium text-[#4B5563] hover:text-[#111827] transition-colors"
           >
-            Project
+            ผลงาน
           </Link>
           <Link
             href="#story"
             className="font-medium text-[#4B5563] hover:text-[#111827] transition-colors"
           >
-            Story
+            เรื่องราว
           </Link>
         </div>
 
         {/* CTA Button */}
-        <div className="flex items-center place-self-end">
+        <div className="flex items-center justify-end w-1/5 place-self-end">
           <Link
             href="/start"
             className="px-4 py-3 font-medium text-white bg-primary hover:bg-primary-hover rounded-full transition-all duration-200"
           >
-            Get Started
+            เริ่มโปรเจค
           </Link>
         </div>
       </nav>

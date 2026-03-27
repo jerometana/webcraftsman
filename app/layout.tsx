@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Manrope, Prompt } from "next/font/google";
+import { Manrope, Outfit, Prompt } from "next/font/google";
 import "./globals.css"; // Global styles
 import SmoothScroll from "@/components/SmoothScroll";
 import Header from "@/components/Header";
 
-const manrope = Manrope({
+const outfit = Outfit({
   subsets: ["latin"],
-  variable: "--font-manrope",
+  variable: "--font-outfit",
 });
 
 const prompt = Prompt({
@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${manrope.className} ${prompt.className} font-sans`}
+        className={`${outfit.className} ${prompt.className} font-sans`}
         suppressHydrationWarning
       >
         <SmoothScroll>
