@@ -42,7 +42,7 @@ export default function ScrollExpansion({
   const borderRadius = useTransform(
     scrollYProgress,
     [0, expandEnd],
-    ["40px", "0px"],
+    ["64px", "0px"],
   );
 
   // ให้เนื้อหาด้านในโชว์ขึ้นมาเมื่อขยายไปได้ 80% ของระยะ expandEnd

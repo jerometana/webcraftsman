@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import Image from "next/image";
 
 export default function ProjectsSection() {
   return (
@@ -27,7 +28,14 @@ export default function ProjectsSection() {
             viewport={{ once: true, margin: "-50px" }}
             transition={{ delay: idx * 0.1, duration: 0.6, ease: "easeOut" }}
           >
-            <div className="w-full aspect-[4/5] bg-gray-50 rounded-3xl"></div>
+            <div className="w-full aspect-[4/5] rounded-3xl overflow-clip">
+              <Image
+                src="/projects/dataechooo.png"
+                alt="Project 1"
+                width={800}
+                height={800}
+              />
+            </div>
             <div className="flex items-center gap-6 px-2">
               <div
                 className={`w-16 h-16 rounded-full shrink-0 ${project.logoClass}`}
