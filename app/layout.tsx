@@ -16,7 +16,7 @@ const prompt = Prompt({
 });
 
 export const metadata: Metadata = {
-  title: "Modern Tech Stack Starter",
+  title: "WEBCRAFTSMAN",
   description:
     "A Next.js project featuring Sanity CMS, Framer Motion, Resend, React Hook Form, and Lenis smooth scrolling.",
 };
@@ -28,7 +28,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${manrope.variable} ${prompt.variable} font-sans`} suppressHydrationWarning>
+      <body
+        className={`${manrope.className} ${prompt.className} font-sans`}
+        suppressHydrationWarning
+      >
         <SmoothScroll>
           <Header />
           {children}
