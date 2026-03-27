@@ -2,7 +2,7 @@
 
 import { motion } from "motion/react";
 
-export default function WhyUsDetailedSection() {
+export default function ServiceSection() {
   return (
     <section className="py-32 px-4 grid grid-cols-3 mx-auto">
       <motion.div
@@ -12,7 +12,7 @@ export default function WhyUsDetailedSection() {
       >
         <div className="sticky top-64 px-8">
           <span className="inline-block px-4 py-1.5 mb-4 text-md font-semibold tracking-widest text-blue-600 uppercase">
-            ทำไมต้องเรา
+            บริการของเรา
           </span>
           <h2 className="text-4xl md:text-6xl font-medium tracking-tight leading-tight mb-16">
             งานทำเว็บ <br />
@@ -27,7 +27,9 @@ export default function WhyUsDetailedSection() {
           </div>
           <div className="w-full">
             <div className="px-6 py-8 sticky top-80">
-              <h3 className="text-3xl font-medium mb-4">ดีไซน์งานละเอียด</h3>
+              <h3 className="text-3xl font-medium mb-4 font-[Outfit]">
+                UX/UI Design
+              </h3>
               <p className="text-text-secondary text-xl">
                 การจัดวาง ลูกเล่น อนิเมชั่น เราจัดให้หมด
               </p>
@@ -38,7 +40,9 @@ export default function WhyUsDetailedSection() {
           <div className="bg-foreground w-full h-[600px] rounded-3xl"></div>
           <div className="w-full">
             <div className="px-6 py-8 sticky top-80">
-              <h3 className="text-3xl font-medium mb-4">ดีไซน์งานละเอียด</h3>
+              <h3 className="text-3xl font-medium mb-4 font-[Outfit]">
+                Web Development
+              </h3>
               <p className="text-text-secondary text-xl">
                 การจัดวาง ลูกเล่น อนิเมชั่น เราจัดให้หมด
               </p>
@@ -49,7 +53,9 @@ export default function WhyUsDetailedSection() {
           <div className="bg-foreground w-full h-[600px] rounded-3xl"></div>
           <div className="w-full">
             <div className="px-6 py-8 sticky top-80">
-              <h3 className="text-3xl font-medium mb-4">ดีไซน์งานละเอียด</h3>
+              <h3 className="text-3xl font-medium mb-4 font-[Outfit]">
+                Design Audit
+              </h3>
               <p className="text-text-secondary text-xl">
                 การจัดวาง ลูกเล่น อนิเมชั่น เราจัดให้หมด
               </p>
