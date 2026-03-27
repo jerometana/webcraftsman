@@ -1,0 +1,5 @@
+{
+  "name": "Modern Tech Stack Starter",
+  "description": "A Next.js project featuring Sanity CMS, Framer Motion, Resend, React Hook Form, and Lenis smooth scrolling.",
+  "requestFramePermissions": []
+}
