@@ -29,11 +29,10 @@ export default async function Home() {
   const posts = await client.fetch(POSTS_QUERY);
 
   return (
-    <main className="min-h-screen text-gray-900 font-sans selection:bg-blue-100 selection:text-blue-900">
+    <main className="min-h-screen font-sans selection:bg-blue-100 selection:text-blue-900">
       <HeroSection />
       <WhyUsSection />
       <ServiceSection />
-
       <ScrollExpansion>
         <h2 className="text-4xl md:text-[80px] font-medium mb-6">
           ให้ผลงาน
@@ -41,7 +40,6 @@ export default async function Home() {
           เป็นเครื่องพิสูจน์
         </h2>
       </ScrollExpansion>
-
       <ProjectsSection />
       <HowItWorksSection />
       <TestimonialSection />

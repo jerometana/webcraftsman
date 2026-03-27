@@ -1,11 +1,25 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, useInView } from "motion/react";
 import Image from "next/image";
+import { useEffect, useRef } from "react";
 
 export default function ProjectsSection() {
+  const ref = useRef<HTMLElement>(null);
+  const isInView = useInView(ref, { margin: "-80% 0px 10% 0px" });
+
+  useEffect(() => {
+    if (isInView) {
+      document.body.style.backgroundColor = "#000000";
+      document.body.style.color = "#ffffff";
+    } else {
+      document.body.style.backgroundColor = "";
+      document.body.style.color = "";
+    }
+  }, [isInView]);
+
   return (
-    <section className="p-8 pb-30 mx-auto bg-black">
+    <section ref={ref} className="p-8 pb-30 mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8">
         {[
           {
@@ -48,7 +62,7 @@ export default function ProjectsSection() {
                   </div>
                 )}
               </div>
-              <span className="font-medium font-[Outfit] text-white text-2xl">
+              <span className="font-medium font-[Outfit] text-2xl">
                 {project.name}
               </span>
             </div>

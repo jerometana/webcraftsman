@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${outfit.className} ${prompt.className} font-sans`}
+        className={`${outfit.className} ${prompt.className} font-sans transition-colors duration-500`}
         suppressHydrationWarning
       >
         <SmoothScroll>
