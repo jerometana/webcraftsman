@@ -158,7 +158,7 @@ All server/client components beneath this layout now have access to hooks/utilit
 
 ## Testing
 
-- Run `npm run lint` (or `pnpm lint`) to ensure type safety and ESLint rules pass.  
+- Run `bun run lint` to ensure type safety and ESLint rules pass.  
 - Visit `/en`, `/th` locally to verify routing and middleware redirection.
 
 This setup removes the custom dictionary system that previously shipped with the project and standardises on `next-intl` for all locale-related concerns.
