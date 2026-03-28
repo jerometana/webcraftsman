@@ -7,7 +7,7 @@ export default function WhyUsSection() {
     <section className="py-32 px-4 max-w-7xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="text-center max-w-4xl m-auto"
       >
@@ -19,7 +19,11 @@ export default function WhyUsSection() {
         </h2>
       </motion.div>
       <div className="grid grid-cols-3 gap-8">
-        <div>
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+        >
           <div className="w-full bg-foreground aspect-square rounded-3xl"></div>
           <div className="w-full px-6 py-8 text-center">
             <h3 className="text-3xl font-medium mb-4">ดีไซน์งานละเอียด</h3>
@@ -27,8 +31,13 @@ export default function WhyUsSection() {
               การจัดวาง ลูกเล่น อนิเมชั่น เราจัดให้หมด
             </p>
           </div>
-        </div>
-        <div className="mt-8">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 1, ease: "easeOut" }}
+          className="mt-8"
+        >
           <div className="w-full bg-foreground aspect-square rounded-3xl"></div>
           <div className="w-full px-6 py-8 text-center">
             <h3 className="text-3xl font-medium mb-4">ดึงตัวตนแบรนด์</h3>
@@ -36,8 +45,12 @@ export default function WhyUsSection() {
               สะท้อนจิตวิญญาณของธุรกิจ
             </p>
           </div>
-        </div>
-        <div>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 1, ease: "easeOut" }}
+        >
           <div className="w-full bg-foreground aspect-square rounded-3xl"></div>
           <div className="w-full px-6 py-8 text-center">
             <h3 className="text-3xl font-medium mb-4">คุณภาพคับจอ</h3>
@@ -45,7 +58,7 @@ export default function WhyUsSection() {
               ลื่นไหลและทรงพลังบนทุกอุปกรณ์
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
