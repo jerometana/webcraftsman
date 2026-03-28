@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 interface Post {
   _id: string;
@@ -85,9 +86,11 @@ export default function StorySection({ posts = [] }: StorySectionProps) {
                   className={`w-full aspect-video rounded-3xl overflow-hidden ${item.imgClass}`}
                 >
                   {item.image?.url ? (
-                    <img
+                    <Image
                       src={item.image.url}
                       alt={item.image.alt || item.title}
+                      width={500}
+                      height={500}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   ) : (
