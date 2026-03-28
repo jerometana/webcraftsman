@@ -13,9 +13,10 @@ export default function ParallaxScroll({
   const { scrollY } = useScroll();
   // Translate Y to create parallax effect (moves down slower than the scroll speed)
   const y = useTransform(scrollY, [0, 500], [0, 200]);
+  const scale = useTransform(scrollY, [0, 500], [1, 0.95]);
 
   return (
-    <motion.div style={{ y }} className={className}>
+    <motion.div style={{ y, scale }} className={className}>
       {children}
     </motion.div>
   );
