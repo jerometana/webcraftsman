@@ -54,7 +54,7 @@ export default function Header() {
             ผลงาน
           </Link>
           <Link
-            href="#story"
+            href="/story"
             className="text-[#4B5563] hover:text-[#111827] transition-colors"
           >
             เรื่องราว

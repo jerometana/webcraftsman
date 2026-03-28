@@ -11,7 +11,7 @@ export default function ServiceSection() {
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <div className="sticky top-64 px-8">
-          <span className="inline-block px-4 py-1.5 mb-4 text-md font-semibold tracking-widest text-blue-600 uppercase">
+          <span className="inline-block px-4 py-1.5 mb-4 text-lg font-semibold tracking-widest text-primary uppercase">
             บริการของเรา
           </span>
           <h2 className="text-4xl md:text-6xl tracking-tight leading-tight mb-16">
@@ -27,9 +27,7 @@ export default function ServiceSection() {
           </div>
           <div className="w-full">
             <div className="px-6 py-8 sticky top-80">
-              <h3 className="text-3xl mb-4 font-[Outfit]">
-                UX/UI Design
-              </h3>
+              <h3 className="text-3xl mb-4 font-[Outfit]">UX/UI Design</h3>
               <p className="text-text-secondary text-xl">
                 การจัดวาง ลูกเล่น อนิเมชั่น เราจัดให้หมด
               </p>
@@ -40,9 +38,7 @@ export default function ServiceSection() {
           <div className="bg-foreground w-full h-[600px] rounded-3xl"></div>
           <div className="w-full">
             <div className="px-6 py-8 sticky top-80">
-              <h3 className="text-3xl mb-4 font-[Outfit]">
-                Web Development
-              </h3>
+              <h3 className="text-3xl mb-4 font-[Outfit]">Web Development</h3>
               <p className="text-text-secondary text-xl">
                 การจัดวาง ลูกเล่น อนิเมชั่น เราจัดให้หมด
               </p>
@@ -53,9 +49,7 @@ export default function ServiceSection() {
           <div className="bg-foreground w-full h-[600px] rounded-3xl"></div>
           <div className="w-full">
             <div className="px-6 py-8 sticky top-80">
-              <h3 className="text-3xl mb-4 font-[Outfit]">
-                Design Audit
-              </h3>
+              <h3 className="text-3xl mb-4 font-[Outfit]">Design Audit</h3>
               <p className="text-text-secondary text-xl">
                 การจัดวาง ลูกเล่น อนิเมชั่น เราจัดให้หมด
               </p>

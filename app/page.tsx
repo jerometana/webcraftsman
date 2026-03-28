@@ -7,26 +7,10 @@ import HowItWorksSection from "@/components/sections/HowItWorksSection";
 import TestimonialSection from "@/components/sections/TestimonialSection";
 import StorySection from "@/components/sections/StorySection";
 import Footer from "@/components/Footer";
-import { client } from "@/lib/sanity";
-import DarkVeil from "@/components/DarkVeil";
-
-const POSTS_QUERY = `*[ _type == "post" ] | order(_createdAt desc)[0...3] {
-  _id,
-  title,
-  slug,
-  _createdAt,
-  mainImage {
-    alt,
-    "url": asset->url
-  },
-  categories[]-> {
-    title,
-    slug
-  }
-}`;
+import { getLatestPosts } from "@/lib/sanity";
 
 export default async function Home() {
-  const posts = await client.fetch(POSTS_QUERY);
+  const posts = await getLatestPosts(3);
 
   return (
     <main className="min-h-screen font-sans selection:bg-blue-100 selection:text-blue-900">

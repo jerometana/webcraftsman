@@ -12,7 +12,7 @@ export default function HowItWorksSection() {
         className="w-full"
       >
         <div className="sticky top-[20rem]">
-          <span className="inline-block px-4 py-1.5 mb-4 text-md font-semibold tracking-widest text-blue-600 uppercase">
+          <span className="inline-block px-4 py-1.5 mb-4 text-lg font-semibold tracking-widest text-blue-600 uppercase">
             วิธีรับบริการ
           </span>
           <h2 className="text-4xl md:text-6xl tracking-tight leading-tight mb-16">

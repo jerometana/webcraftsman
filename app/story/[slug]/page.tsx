@@ -1,9 +1,8 @@
-import { client } from "@/lib/sanity";
+import { client, urlFor } from "@/lib/sanity";
 import { notFound } from "next/navigation";
 import Footer from "@/components/Footer";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
-import { createImageUrlBuilder } from "@sanity/image-url";
 import ParallaxScroll from "./ParallaxScroll";
 
 // Revalidate time if you want ISR
@@ -85,6 +84,10 @@ export default async function StorySlugPage({ params }: Props) {
     notFound();
   }
 
+  const imageUrl = post.mainImage
+    ? urlFor(post.mainImage).width(800).height(450).url()
+    : "/placeholder-image.svg";
+
   // Use publishedAt or fallback to Sanity default _createdAt format if we had one (but we queried publishedAt)
   const dateStr = post.publishedAt || new Date().toISOString();
   const date = new Date(dateStr).toLocaleDateString("th-TH", {
@@ -138,10 +141,10 @@ export default async function StorySlugPage({ params }: Props) {
         <div className="w-full bg-bg-primary z-10 relative px-4 pb-32">
           {/* Feature Image */}
           {(post.mainImage?.url || post.mainImage?.asset) && (
-            <div className="w-full max-w-7xl mx-auto aspect-video rounded-4xl overflow-hidden mb-12 relative bg-foreground flex items-center justify-center text-white/50 shadow-2xl">
+            <div className="w-full max-w-7xl mx-auto aspect-video rounded-4xl overflow-hidden mb-12 relative bg-foreground flex items-center justify-center text-white/50 border border-gray-300">
               {post.mainImage.url ? (
                 <Image
-                  src={post.mainImage.url}
+                  src={imageUrl}
                   alt={post.mainImage.alt || post.title}
                   width={1280}
                   height={720}
@@ -156,7 +159,7 @@ export default async function StorySlugPage({ params }: Props) {
           )}
 
           {/* Content Section */}
-          <div className="prose prose-lg md:prose-xl max-w-3xl mx-auto prose-blue leading-loose text-text-secondary">
+          <div className="prose prose-lg md:prose-xl max-w-3xl mt-16 mx-auto prose-blue leading-loose text-text-secondary">
             {post.body ? (
               <PortableText
                 value={post.body}
@@ -174,12 +177,6 @@ export default async function StorySlugPage({ params }: Props) {
   );
 }
 
-const builder = createImageUrlBuilder(client);
-
-function urlFor(source: any) {
-  return builder.image(source);
-}
-
 const portableTextComponents = {
   types: {
     image: ({ value }: any) => {
@@ -194,7 +191,7 @@ const portableTextComponents = {
             alt={value.alt || value.caption || "Blog post image"}
             width={maxWidth}
             height={600} // This will be adjusted by CSS to maintain aspect ratio
-            className="w-full h-auto rounded-xl mx-auto border border-gray-300"
+            className="w-full h-auto rounded-3xl mx-auto border border-gray-300"
           />
           {value.caption && (
             <p className="mt-2 text-center !text-sm text-gray-600">
@@ -243,30 +240,30 @@ const portableTextComponents = {
   block: {
     h1: ({ children }: any) => {
       return (
-        <h1 className="text-3xl font-bold !mt-16 mb-4 !leading-12 scroll-mt-24">
+        <h1 className="text-4xl text-black !mt-16 mb-4 !leading-12 scroll-mt-24">
           {children}
         </h1>
       );
     },
     h2: ({ children }: any) => {
       return (
-        <h2 className="text-2xl font-bold !mt-16 mb-4 !leading-12 !tracking-tight scroll-mt-24">
+        <h2 className="text-3xl text-black !mt-16 mb-4 !leading-12 scroll-mt-24">
           {children}
         </h2>
       );
     },
     h3: ({ children }: any) => {
       return (
-        <h3 className="text-xl font-bold !mt-16 mb-3 !leading-12 scroll-mt-24">
+        <h3 className="text-2xl text-black !mt-16 mb-3 !leading-12 scroll-mt-24">
           {children}
         </h3>
       );
     },
     normal: ({ children }: any) => (
-      <p className="mb-8 text-2xl leading-loose">{children}</p>
+      <p className="mb-8 text-2xl leading-loose font-normal">{children}</p>
     ),
     blockquote: ({ children }: any) => (
-      <blockquote className="border-l-4 border-primary pl-6 my-6 italic">
+      <blockquote className="border-l-4 border-primary text-2xl pl-6 py-4 my-12">
         {children}
       </blockquote>
     ),
@@ -283,7 +280,7 @@ const portableTextComponents = {
       </a>
     ),
     strong: ({ children }: any) => (
-      <strong className="text-black">{children}</strong>
+      <strong className="text-black font-medium">{children}</strong>
     ),
     em: ({ children }: any) => <em className="italic">{children}</em>,
     code: ({ children }: any) => (
@@ -294,18 +291,18 @@ const portableTextComponents = {
   },
   list: {
     bullet: ({ children }: any) => (
-      <ul className="list-disc pl-6 mb-4">{children}</ul>
+      <ul className="list-disc pl-6 mb-8">{children}</ul>
     ),
     number: ({ children }: any) => (
-      <ol className="list-decimal pl-6 mb-4">{children}</ol>
+      <ol className="list-decimal pl-6 mb-8">{children}</ol>
     ),
   },
   listItem: {
     bullet: ({ children }: any) => (
-      <li className="mb-2 leading-10 text-gray-600">{children}</li>
+      <li className="mb-2 leading-12 text-2xl font-normal">{children}</li>
     ),
     number: ({ children }: any) => (
-      <li className="mb-2 leading-10 text-gray-600">{children}</li>
+      <li className="mb-2 leading-12 text-2xl font-normal">{children}</li>
     ),
   },
 };
