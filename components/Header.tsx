@@ -43,19 +43,19 @@ export default function Header() {
         >
           <Link
             href="#service"
-            className="font-medium text-[#4B5563] hover:text-[#111827] transition-colors"
+            className="text-[#4B5563] hover:text-[#111827] transition-colors"
           >
             บริการ
           </Link>
           <Link
             href="#project"
-            className="font-medium text-[#4B5563] hover:text-[#111827] transition-colors"
+            className="text-[#4B5563] hover:text-[#111827] transition-colors"
           >
             ผลงาน
           </Link>
           <Link
             href="#story"
-            className="font-medium text-[#4B5563] hover:text-[#111827] transition-colors"
+            className="text-[#4B5563] hover:text-[#111827] transition-colors"
           >
             เรื่องราว
           </Link>
@@ -70,7 +70,7 @@ export default function Header() {
         >
           <Link
             href="/start"
-            className="px-4 py-3 font-medium text-white bg-primary hover:bg-primary-hover rounded-full transition-all duration-200 whitespace-nowrap"
+            className="px-4 py-3 text-white bg-primary hover:bg-primary-hover rounded-full transition-all duration-200 whitespace-nowrap"
           >
             เริ่มโปรเจค
           </Link>

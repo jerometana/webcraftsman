@@ -22,7 +22,7 @@ export default function TestimonialSection() {
                 delay={100}
                 animateBy="words"
                 direction="bottom"
-                className="text-[40px] font-medium leading-tight"
+                className="text-[40px] leading-tight"
               />
               <BlurText
                 text="ทำให้เว็บไซต์ที่ออกมา ไม่ใช่แค่สวย แต่ยังสะท้อนตัวตน
@@ -31,9 +31,9 @@ export default function TestimonialSection() {
                 animateBy="words"
                 direction="bottom"
                 threshold={1}
-                className="text-[40px] text-text-secondary font-medium leading-tight"
+                className="text-[40px] text-text-secondary leading-tight"
               />
-              {/* <p className="mb-16 text-[40px] font-medium leading-tight">
+              {/* <p className="mb-16 text-[40px] leading-tight">
                 <span className="text-text-secondary">
                   ทำให้เว็บไซต์ที่ออกมา ไม่ใช่แค่สวย แต่ยังสะท้อนตัวตน
                   ของแบรนด์ได้อย่างชัดเจน
@@ -49,7 +49,7 @@ export default function TestimonialSection() {
                 alt="Jatawat Xie"
                 className="w-16 h-16 bg-primary rounded-full"
               />
-              <div className="font-medium font-[Outfit] text-2xl">
+              <div className="font-[Outfit] text-2xl">
                 <p className="mb-1">Jatawat Xie</p>
                 <p className="text-xl text-text-secondary">CEO, Data Echooo</p>
               </div>

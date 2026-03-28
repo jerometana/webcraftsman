@@ -15,7 +15,7 @@ export default function WhyUsSection() {
         <span className="inline-block px-4 py-1.5 mb-4 text-md font-semibold tracking-widest text-blue-600 uppercase">
           เราดียังไง
         </span>
-        <h2 className="text-4xl md:text-6xl font-medium tracking-tight leading-tight mb-16">
+        <h2 className="text-4xl md:text-6xl tracking-tight leading-tight mb-16">
           สะกดทุกสายตา
         </h2>
       </motion.div>
@@ -28,7 +28,7 @@ export default function WhyUsSection() {
         >
           <div className="w-full bg-foreground aspect-square rounded-3xl"></div>
           <div className="w-full px-6 py-8 text-center">
-            <h3 className="text-3xl font-medium mb-4">ดีไซน์งานละเอียด</h3>
+            <h3 className="text-3xl mb-4">ดีไซน์งานละเอียด</h3>
             <p className="text-text-secondary text-xl">
               การจัดวาง ลูกเล่น อนิเมชั่น เราจัดให้หมด
             </p>
@@ -43,7 +43,7 @@ export default function WhyUsSection() {
         >
           <div className="w-full bg-foreground aspect-square rounded-3xl"></div>
           <div className="w-full px-6 py-8 text-center">
-            <h3 className="text-3xl font-medium mb-4">ดึงตัวตนแบรนด์</h3>
+            <h3 className="text-3xl mb-4">ดึงตัวตนแบรนด์</h3>
             <p className="text-text-secondary text-xl">
               สะท้อนจิตวิญญาณของธุรกิจ
             </p>
@@ -57,7 +57,7 @@ export default function WhyUsSection() {
         >
           <div className="w-full bg-foreground aspect-square rounded-3xl"></div>
           <div className="w-full px-6 py-8 text-center">
-            <h3 className="text-3xl font-medium mb-4">คุณภาพคับจอ</h3>
+            <h3 className="text-3xl mb-4">คุณภาพคับจอ</h3>
             <p className="text-text-secondary text-xl">
               ลื่นไหลและทรงพลังบนทุกอุปกรณ์
             </p>

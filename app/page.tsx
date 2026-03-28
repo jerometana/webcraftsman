@@ -34,7 +34,7 @@ export default async function Home() {
       <WhyUsSection />
       <ServiceSection />
       <ScrollExpansion>
-        <h2 className="text-4xl md:text-[80px] font-medium mb-6">
+        <h2 className="text-4xl md:text-[80px] mb-6">
           ให้ผลงาน
           <br />
           เป็นเครื่องพิสูจน์

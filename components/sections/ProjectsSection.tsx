@@ -61,7 +61,7 @@ export default function ProjectsSection() {
                   height={800}
                 />
               </div>
-              <span className="font-medium font-[Outfit] text-2xl">
+              <span className="font-[Outfit] text-2xl">
                 {project.name}
               </span>
             </div>

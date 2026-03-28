@@ -50,7 +50,7 @@ export default function StorySection({ posts = [] }: StorySectionProps) {
         <span className="inline-block px-4 py-1.5 mb-4 text-sm font-semibold text-blue-600">
           Story
         </span>
-        <h2 className="text-4xl md:text-6xl font-medium tracking-tight">
+        <h2 className="text-4xl md:text-6xl tracking-tight">
           คอนเทนต์เราก็ทำ{" "}
           <span className="text-text-secondary">ยอมได้ที่ไหน</span>
         </h2>
@@ -85,13 +85,13 @@ export default function StorySection({ posts = [] }: StorySectionProps) {
                 )}
               </div>
               <div className="p-8 flex flex-col items-start text-left">
-                <span className="text-xl font-[Outfit] font-medium text-primary mb-6">
+                <span className="text-xl font-[Outfit] text-primary mb-6">
                   {item.tag}
                 </span>
-                <h3 className="text-3xl font-medium mb-6 leading-snug group-hover:text-blue-600 transition-colors">
+                <h3 className="text-3xl mb-6 leading-snug group-hover:text-blue-600 transition-colors">
                   {item.title}
                 </h3>
-                <span className="text-xl text-text-secondary font-medium">
+                <span className="text-xl text-text-secondary">
                   {item.date}
                 </span>
               </div>
@@ -107,7 +107,7 @@ export default function StorySection({ posts = [] }: StorySectionProps) {
         transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
         className="mt-16"
       >
-        <button className="px-6 py-2.5 bg-gray-50 text-blue-600 rounded-full font-medium flex items-center gap-2 hover:bg-gray-100 transition-colors">
+        <button className="px-6 py-2.5 bg-gray-50 text-blue-600 rounded-full flex items-center gap-2 hover:bg-gray-100 transition-colors">
           View all
           <ChevronDown className="w-4 h-4 text-blue-600" />
         </button>
