@@ -85,7 +85,7 @@ export default async function StorySlugPage({ params }: Props) {
   }
 
   const imageUrl = post.mainImage
-    ? urlFor(post.mainImage).width(800).height(450).url()
+    ? urlFor(post.mainImage).width(1280).height(720).url()
     : "/placeholder-image.svg";
 
   // Use publishedAt or fallback to Sanity default _createdAt format if we had one (but we queried publishedAt)

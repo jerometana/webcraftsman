@@ -48,7 +48,7 @@ export default function Header() {
             บริการ
           </Link>
           <Link
-            href="#project"
+            href="/#project"
             className="text-[#4B5563] hover:text-[#111827] transition-colors"
           >
             ผลงาน
