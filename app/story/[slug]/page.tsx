@@ -100,7 +100,7 @@ export default async function StorySlugPage({ params }: Props) {
       <article className="w-full pt-32 mx-auto flex-1">
         {/* Header Section with Parallax Sticky Effect */}
         <ParallaxScroll className="w-full px-4 -z-10">
-          <header className="mb-12 max-w-4xl mx-auto text-center text-text-primary">
+          <header className="mb-12 max-w-5xl mx-auto text-center text-text-primary">
             <span className="text-xl font-[Outfit] text-primary tracking-wider mb-8 inline-block">
               {category}
             </span>
@@ -138,7 +138,7 @@ export default async function StorySlugPage({ params }: Props) {
         <div className="w-full bg-bg-primary z-10 relative px-4 pb-32">
           {/* Feature Image */}
           {(post.mainImage?.url || post.mainImage?.asset) && (
-            <div className="w-full max-w-7xl mx-auto aspect-video rounded-4xl overflow-hidden mb-12 relative bg-primary flex items-center justify-center text-white/50 shadow-2xl">
+            <div className="w-full max-w-7xl mx-auto aspect-video rounded-4xl overflow-hidden mb-12 relative bg-foreground flex items-center justify-center text-white/50 shadow-2xl">
               {post.mainImage.url ? (
                 <Image
                   src={post.mainImage.url}
