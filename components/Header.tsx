@@ -72,7 +72,7 @@ export default function Header() {
             href="/start"
             className="px-4 py-3 text-white bg-primary hover:bg-primary-hover rounded-full transition-all duration-200 whitespace-nowrap"
           >
-            เริ่มโปรเจค
+            เริ่มต้นรับบริการ
           </Link>
         </motion.div>
       </motion.nav>

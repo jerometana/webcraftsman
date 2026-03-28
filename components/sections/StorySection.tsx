@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import { ChevronDown } from "lucide-react";
+import Link from "next/link";
 
 interface Post {
   _id: string;
@@ -28,6 +29,7 @@ export default function StorySection({ posts = [] }: StorySectionProps) {
       ? posts.map((post) => ({
           tag: post.categories?.[0]?.title || "Blog",
           title: post.title,
+          slug: post.slug?.current,
           date: new Date(post._createdAt).toLocaleDateString("th-TH", {
             year: "numeric",
             month: "long",
@@ -61,41 +63,50 @@ export default function StorySection({ posts = [] }: StorySectionProps) {
           const isFirst = idx === 0;
 
           return (
-            <motion.div
+            <Link
               key={idx}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ delay: idx * 0.1, duration: 0.6, ease: "easeOut" }}
-              className={`group cursor-pointer flex flex-col ${
-                isFirst ? "md:flex-row md:col-span-2 gap-8 md:items-start" : ""
-              }`}
+              href={`/story/${item.slug}`}
+              className={isFirst ? "md:col-span-2" : ""}
             >
-              <div
-                className={`w-full aspect-video rounded-3xl overflow-hidden ${item.imgClass}`}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{
+                  delay: idx * 0.1,
+                  duration: 0.6,
+                  ease: "easeOut",
+                }}
+                className={`group cursor-pointer flex flex-col w-full h-full ${
+                  isFirst ? "md:flex-row gap-8 md:items-start" : ""
+                }`}
               >
-                {item.image?.url ? (
-                  <img
-                    src={item.image.url}
-                    alt={item.image.alt || item.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                ) : (
-                  <div className="w-full h-full bg-blue-600 transition-transform duration-500 group-hover:scale-105" />
-                )}
-              </div>
-              <div className="p-8 flex flex-col items-start text-left">
-                <span className="text-xl font-[Outfit] text-primary mb-6">
-                  {item.tag}
-                </span>
-                <h3 className="text-3xl mb-6 leading-snug group-hover:text-blue-600 transition-colors">
-                  {item.title}
-                </h3>
-                <span className="text-xl text-text-secondary">
-                  {item.date}
-                </span>
-              </div>
-            </motion.div>
+                <div
+                  className={`w-full aspect-video rounded-3xl overflow-hidden ${item.imgClass}`}
+                >
+                  {item.image?.url ? (
+                    <img
+                      src={item.image.url}
+                      alt={item.image.alt || item.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-blue-600 transition-transform duration-500 group-hover:scale-105" />
+                  )}
+                </div>
+                <div className="p-8 flex flex-col items-start text-left">
+                  <span className="text-xl font-[Outfit] text-primary mb-6">
+                    {item.tag}
+                  </span>
+                  <h3 className="text-3xl mb-6 leading-snug group-hover:text-blue-600 transition-colors">
+                    {item.title}
+                  </h3>
+                  <span className="text-xl text-text-secondary">
+                    {item.date}
+                  </span>
+                </div>
+              </motion.div>
+            </Link>
           );
         })}
       </div>

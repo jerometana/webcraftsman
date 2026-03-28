@@ -11,11 +11,12 @@ const nextConfig: NextConfig = {
   // Allow access to remote image placeholder.
   images: {
     remotePatterns: [
+      
       {
         protocol: 'https',
-        hostname: 'picsum.photos',
+        hostname: 'cdn.sanity.io',
         port: '',
-        pathname: '/**', // This allows any path under the hostname
+        pathname: '/**', 
       },
     ],
   },
