@@ -42,7 +42,13 @@ export default function TestimonialSection() {
             </div>
 
             <div className="flex items-center gap-4">
-              <div className="w-16 h-16 bg-primary rounded-full"></div>
+              <Image
+                src="/projects/data-echooo/jatawat-xie.png"
+                width={100}
+                height={100}
+                alt="Jatawat Xie"
+                className="w-16 h-16 bg-primary rounded-full"
+              />
               <div className="font-medium font-[Outfit] text-2xl">
                 <p className="mb-1">Jatawat Xie</p>
                 <p className="text-xl text-text-secondary">CEO, Data Echooo</p>

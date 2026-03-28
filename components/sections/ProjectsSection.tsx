@@ -19,7 +19,7 @@ export default function ProjectsSection() {
   }, [isInView]);
 
   return (
-    <section ref={ref} className="p-8 pb-30 mx-auto">
+    <section id="project" ref={ref} className="p-8 pb-30 mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8">
         {[
           {
@@ -44,7 +44,7 @@ export default function ProjectsSection() {
           >
             <div className="w-full aspect-[4/5] rounded-3xl overflow-clip">
               <Image
-                src="/projects/dataechooo.png"
+                src="/projects/data-echooo/website.png"
                 alt="Project 1"
                 width={800}
                 height={800}
@@ -52,15 +52,14 @@ export default function ProjectsSection() {
             </div>
             <div className="flex items-center gap-6 px-2">
               <div
-                className={`w-16 h-16 rounded-full shrink-0 ${project.logoClass}`}
+                className={`w-16 h-16 rounded-full overflow-clip shrink-0 ${project.logoClass}`}
               >
-                {project.logoText && (
-                  <div className="text-center">
-                    {project.logoText.split("\n").map((line, i) => (
-                      <div key={i}>{line}</div>
-                    ))}
-                  </div>
-                )}
+                <Image
+                  src="/projects/data-echooo/logo.png"
+                  alt="Project 1"
+                  width={800}
+                  height={800}
+                />
               </div>
               <span className="font-medium font-[Outfit] text-2xl">
                 {project.name}

@@ -15,6 +15,11 @@ const prompt = Prompt({
   variable: "--font-prompt",
 });
 
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-manrope",
+});
+
 export const metadata: Metadata = {
   title: "WEBCRAFTSMAN",
   description:
@@ -29,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${outfit.className} ${prompt.className} font-sans transition-colors duration-500`}
+        className={`${prompt.className} font-medium transition-colors duration-500`}
         suppressHydrationWarning
       >
         <SmoothScroll>

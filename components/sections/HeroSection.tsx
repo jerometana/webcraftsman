@@ -12,15 +12,16 @@ export default function HeroSection() {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="text-center max-w-4xl"
       >
-        <span className="inline-block px-4 py-1.5 mb-6 text-md font-semibold tracking-widest text-blue-600 uppercase">
-          The Ultimate Starter Template
+        <span className="inline-block px-4 py-1.5 mb-6 text-xl tracking-wider text-primary uppercase">
+          ออกแบบและพัฒนาเว็บไซต์สมัยใหม่
         </span>
-        <h1 className="text-6xl md:text-[80px] font-medium tracking-tight leading-tight mb-8">
+        <h1 className="text-6xl md:text-[80px] font-medium tracking-tight leading-tight mb-4">
           เล่าเรื่องผ่านดีไซน์ <br />
-          <span className="text-text-secondary">
-            เพื่อผลลัพธ์ที่จับต้องได้
-          </span>
+          <span className="text-text-secondary">เพื่อผลลัพธ์ที่จับต้องได้</span>
         </h1>
+        <p className="text-text-secondary text-2xl mb-16">
+          พรีเมียม ลื่นไหล และปิดการขายได้จริง
+        </p>
         <div className="flex flex-wrap items-center justify-center gap-4">
           <button className="px-6 py-4 bg-primary text-white rounded-full font-medium text-2xl hover:bg-primary-hover transition-all flex items-center gap-2 group">
             เริ่มต้นรับบริการ

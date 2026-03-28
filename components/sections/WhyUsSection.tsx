@@ -9,6 +9,7 @@ export default function WhyUsSection() {
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true }}
         className="text-center max-w-4xl m-auto"
       >
         <span className="inline-block px-4 py-1.5 mb-4 text-md font-semibold tracking-widest text-blue-600 uppercase">
@@ -23,6 +24,7 @@ export default function WhyUsSection() {
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
+          viewport={{ once: true }}
         >
           <div className="w-full bg-foreground aspect-square rounded-3xl"></div>
           <div className="w-full px-6 py-8 text-center">
@@ -36,6 +38,7 @@ export default function WhyUsSection() {
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 1, ease: "easeOut" }}
+          viewport={{ once: true }}
           className="mt-8"
         >
           <div className="w-full bg-foreground aspect-square rounded-3xl"></div>
@@ -50,6 +53,7 @@ export default function WhyUsSection() {
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 1, ease: "easeOut" }}
+          viewport={{ once: true }}
         >
           <div className="w-full bg-foreground aspect-square rounded-3xl"></div>
           <div className="w-full px-6 py-8 text-center">
