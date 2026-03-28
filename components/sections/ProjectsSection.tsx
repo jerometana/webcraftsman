@@ -8,15 +8,15 @@ export default function ProjectsSection() {
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { margin: "-80% 0px 10% 0px" });
 
-  useEffect(() => {
-    if (isInView) {
-      document.body.style.backgroundColor = "#000000";
-      document.body.style.color = "#ffffff";
-    } else {
-      document.body.style.backgroundColor = "";
-      document.body.style.color = "";
-    }
-  }, [isInView]);
+  // useEffect(() => {
+  //   if (isInView) {
+  //     document.body.style.backgroundColor = "#000000";
+  //     document.body.style.color = "#ffffff";
+  //   } else {
+  //     document.body.style.backgroundColor = "";
+  //     document.body.style.color = "";
+  //   }
+  // }, [isInView]);
 
   return (
     <section id="project" ref={ref} className="p-8 pb-30 mx-auto">
@@ -42,7 +42,7 @@ export default function ProjectsSection() {
             viewport={{ once: true, margin: "-50px" }}
             transition={{ delay: idx * 0.1, duration: 0.6, ease: "easeOut" }}
           >
-            <div className="w-full aspect-[4/5] rounded-3xl overflow-clip">
+            <div className="w-full aspect-[4/5] rounded-3xl overflow-clip border border-gray-300">
               <Image
                 src="/projects/data-echooo/website.png"
                 alt="Project 1"
@@ -61,9 +61,7 @@ export default function ProjectsSection() {
                   height={800}
                 />
               </div>
-              <span className="font-[Outfit] text-2xl">
-                {project.name}
-              </span>
+              <span className="font-[Outfit] text-2xl">{project.name}</span>
             </div>
           </motion.div>
         ))}
