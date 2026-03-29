@@ -24,7 +24,7 @@ function StepCard({
   return (
     <div className="sticky top-32">
       <div
-        className={`w-md h-[600px] rounded-3xl p-16 text-center flex flex-col justify-between backdrop-blur-xl ${
+        className={`max-w-md h-[600px] rounded-3xl p-16 text-center flex flex-col justify-between backdrop-blur-xl ${
           isPrimary ? "bg-primary text-white" : "bg-foreground/90"
         }`}
         style={{ rotate: rotation, marginTop: topOffset }}
@@ -84,24 +84,24 @@ const topOffsets = ["0", "1rem", "2rem", "3rem", "4rem"];
 
 export default function HowItWorksSection() {
   return (
-    <section className="py-32 max-w-7xl flex px-4 mx-auto">
+    <section className="py-32 max-w-7xl flex flex-col md:flex-row px-4 mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="w-full"
       >
-        <div className="sticky my-48 top-[20rem]">
-          <span className="inline-block px-4 py-1.5 mb-4 text-lg font-semibold tracking-widest text-primary uppercase">
+        <div className="sticky top-[20rem] text-center md:text-left mb-16 md:my-48">
+          <span className="inline-block mb-4 text-lg font-semibold tracking-widest text-primary uppercase">
             วิธีรับบริการ
           </span>
-          <h2 className="text-4xl md:text-6xl tracking-tight leading-tight mb-16">
+          <h2 className="text-5xl md:text-6xl tracking-tight leading-tight">
             ขั้นตอนง่าย ๆ <br />
             <span className="text-text-secondary">ชัดเจนแจ่มแจ้ง</span>
           </h2>
         </div>
       </motion.div>
-      <div className="flex flex-col items-end w-full gap-16">
+      <div className="flex flex-col items-center md:items-end w-full gap-16">
         {steps.map((step, i) => (
           <StepCard
             key={step.step}

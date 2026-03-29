@@ -2,7 +2,13 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
-import { CodeIcon, ComponentIcon, ListChecksIcon, type LucideIcon } from "lucide-react";
+import { useMediaQuery } from "@/hooks/use-media-query";
+import {
+  CodeIcon,
+  ComponentIcon,
+  ListChecksIcon,
+  type LucideIcon,
+} from "lucide-react";
 
 interface ServiceCardProps {
   icon: LucideIcon;
@@ -19,19 +25,23 @@ function ServiceCard({
   rotation,
   topOffset = "0",
 }: ServiceCardProps) {
+  const isDesktop = useMediaQuery("(min-width: 1024px)");
+
   return (
-    <div style={{ marginTop: topOffset }}>
+    <div style={{ marginTop: isDesktop ? topOffset : "0" }}>
       <div className="sticky top-52">
         <div
-          className="mx-auto bg-foreground/90 backdrop-blur-xl h-[600px] aspect-[3/4] rounded-3xl"
-          style={{ rotate: rotation }}
+          className="mx-auto max-w-sm bg-foreground/90 backdrop-blur-xl w-full aspect-[3/4] rounded-3xl"
+          style={{ rotate: isDesktop ? rotation : "0deg" }}
         >
-          <div className="p-8 pb-16 flex flex-col justify-end text-center h-full">
+          <div className="p-4 pb-8 xl:p-8 xl:pb-16 flex flex-col justify-end text-center h-full">
             <div className="flex justify-center items-center h-full mb-8">
-              <Icon className="w-32 h-32 text-primary" />
+              <Icon className="w-16 h-16 xl:w-24 xl:h-24 text-primary" />
             </div>
-            <h3 className="text-3xl mb-4 font-[Outfit]">{title}</h3>
-            <p className="text-text-secondary text-xl">{description}</p>
+            <h3 className="text-2xl xl:text-3xl mb-4 font-[Outfit]">{title}</h3>
+            <p className="text-text-secondary text-base xl:text-xl">
+              {description}
+            </p>
           </div>
         </div>
       </div>
@@ -84,10 +94,10 @@ export default function ServiceSection() {
   return (
     <section ref={sectionRef}>
       {/* Headline: sticky with low z-index so cards scroll over it */}
-      <div className="sticky top-0 z-0 px-16 pt-80 pb-[34rem] text-center">
+      <div className="lg:sticky top-0 z-0 px-16 pb-12 lg:pt-80 lg:pb-[34rem] text-center">
         <motion.h2
           style={{ opacity, filter: blur }}
-          className="text-4xl md:text-9xl tracking-tight leading-none"
+          className="text-5xl md:text-9xl tracking-tight leading-none"
         >
           งานทำเว็บ
           <br />
@@ -95,7 +105,7 @@ export default function ServiceSection() {
         </motion.h2>
       </div>
       {/* Cards: relative z-index above the headline */}
-      <div className="relative z-10 flex gap-8 justify-center px-4 pb-80 mx-auto">
+      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-3 gap-8 justify-center px-8 md:px-16 pb-80 mx-auto">
         {services.map((service) => (
           <ServiceCard key={service.title} {...service} />
         ))}

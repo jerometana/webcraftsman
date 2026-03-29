@@ -45,7 +45,7 @@ export function StoryCard({
           ease: "easeOut",
         }}
         className={`group cursor-pointer flex flex-col w-full h-full ${
-          isFirst ? "md:flex-row gap-8 md:items-start" : ""
+          isFirst ? "lg:flex-row md:gap-8 md:items-start" : ""
         }`}
       >
         <div
@@ -60,10 +60,10 @@ export function StoryCard({
           />
         </div>
         <div className="p-8 flex flex-col items-start text-left">
-          <span className="text-xl font-[Outfit] text-primary mb-6">
+          <span className="text-lg md:text-xl font-[Outfit] text-primary mb-6">
             {item.tag}
           </span>
-          <h3 className="text-3xl mb-6 leading-snug group-hover:text-primary-hover transition-colors">
+          <h3 className="text-2xl md:text-3xl mb-6 leading-snug group-hover:text-primary-hover transition-colors">
             {item.title}
           </h3>
           <span className="text-xl text-text-secondary">{item.date}</span>

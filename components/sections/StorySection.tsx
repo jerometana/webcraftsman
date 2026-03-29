@@ -38,7 +38,7 @@ export default function StorySection({ posts = [] }: StorySectionProps) {
         <span className="inline-block px-4 py-1.5 mb-4 text-xl font-[Outfit] font-semibold text-primary">
           Story
         </span>
-        <h2 className="text-4xl md:text-6xl tracking-tight">
+        <h2 className="text-5xl md:text-6xl tracking-tight leading-tight">
           คอนเทนต์เราก็ทำ{" "}
           <span className="text-text-secondary">ยอมได้ที่ไหน</span>
         </h2>

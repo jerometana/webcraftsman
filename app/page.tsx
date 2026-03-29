@@ -18,10 +18,10 @@ export default async function Home() {
       <HeroSection />
       <WhyUsSection />
       <ServiceSection />
-      <div className="h-[200vh] relative">
-        <div className="absolute top-0 w-full z-10">
+      <div className="lg:h-[200vh] relative">
+        <div className="lg:absolute top-0 w-full z-10">
           <ScrollExpansion>
-            <h2 className="text-4xl md:text-[80px] mb-6">
+            <h2 className="text-5xl leading-tight md:text-[80px] mb-6">
               ให้ผลงาน
               <br />
               เป็นเครื่องพิสูจน์
