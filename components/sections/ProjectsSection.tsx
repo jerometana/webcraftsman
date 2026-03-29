@@ -4,58 +4,59 @@ import { motion, useInView } from "motion/react";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 
+const projects = [
+  {
+    name: "Data Echooo",
+    image: "/projects/data-echooo/website.png",
+    logo: "/projects/data-echooo/logo.png",
+  },
+  {
+    name: "Amazing Friend",
+    image: "/projects/amazing-friend/website.png",
+    logo: "/projects/amazing-friend/logo.png",
+  },
+  {
+    name: "Data Echooo",
+    image: "/projects/data-echooo/website.png",
+    logo: "/projects/data-echooo/logo.png",
+  },
+  {
+    name: "Amazing Friend",
+    image: "/projects/amazing-friend/website.png",
+    logo: "/projects/amazing-friend/logo.png",
+  },
+];
+
 export default function ProjectsSection() {
   const ref = useRef<HTMLElement>(null);
-  const isInView = useInView(ref, { margin: "-80% 0px 10% 0px" });
-
-  // useEffect(() => {
-  //   if (isInView) {
-  //     document.body.style.backgroundColor = "#000000";
-  //     document.body.style.color = "#ffffff";
-  //   } else {
-  //     document.body.style.backgroundColor = "";
-  //     document.body.style.color = "";
-  //   }
-  // }, [isInView]);
 
   return (
     <section id="project" ref={ref} className="p-8 pb-30 mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8">
-        {[
-          {
-            name: "Data Echooo",
-            logoClass:
-              "bg-blue-600 text-white flex items-center justify-center text-[9px] font-bold leading-tight tracking-tighter",
-            logoText: "Data\nEchooo",
-          },
-          { name: "Amazing Thailand", logoClass: "bg-gray-100" },
-          { name: "Data Echooo", logoClass: "bg-gray-100" },
-          { name: "Data Echooo", logoClass: "bg-gray-100" },
-          { name: "Data Echooo", logoClass: "bg-gray-100" },
-          { name: "Data Echooo", logoClass: "bg-gray-100" },
-        ].map((project, idx) => (
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-8">
+        {projects.map((project, idx) => (
           <motion.div
             key={idx}
-            className="flex flex-col gap-4"
+            className="flex flex-col"
             initial={{ opacity: 0, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ delay: idx * 0.1, duration: 0.6, ease: "easeOut" }}
           >
-            <div className="w-full aspect-[4/5] rounded-3xl overflow-clip border border-gray-300">
+            <div>
               <Image
-                src="/projects/data-echooo/website.png"
-                alt="Project 1"
+                src={project.image}
+                alt={project.name}
                 width={800}
                 height={800}
+                className="w-full aspect-[9/16] object-cover object-top rounded-3xl overflow-clip bg-foreground border border-gray-300"
               />
             </div>
-            <div className="flex items-center gap-6 px-2">
+            <div className="flex items-center gap-6 p-4">
               <div
-                className={`w-16 h-16 rounded-full overflow-clip shrink-0 ${project.logoClass}`}
+                className={`w-16 h-16 rounded-full overflow-clip shrink-0  border border-gray-300`}
               >
                 <Image
-                  src="/projects/data-echooo/logo.png"
+                  src={project.logo}
                   alt="Project 1"
                   width={800}
                   height={800}

@@ -1,18 +1,30 @@
 "use client";
 
-import { motion } from "motion/react";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "motion/react";
 import { CodeIcon, ComponentIcon, ListChecksIcon } from "lucide-react";
 
 export default function ServiceSection() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "start 0.4"],
+  });
+
+  const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
+  const blur = useTransform(
+    scrollYProgress,
+    [0, 1],
+    ["blur(16px)", "blur(0px)"],
+  );
+
   return (
-    <section>
+    <section ref={sectionRef}>
       {/* Headline: sticky with low z-index so cards scroll over it */}
       <div className="sticky top-0 z-0 px-16 pt-80 pb-[34rem] text-center">
         <motion.h2
-          initial={{ opacity: 0, y: 64, filter: "blur(16px)" }}
-          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
+          style={{ opacity, filter: blur }}
           className="text-4xl md:text-9xl  tracking-tight leading-none"
         >
           งานทำเว็บ
