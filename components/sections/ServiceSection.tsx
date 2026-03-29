@@ -7,8 +7,16 @@ import {
   CodeIcon,
   ComponentIcon,
   ListChecksIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
   type LucideIcon,
 } from "lucide-react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
 
 interface ServiceCardProps {
   icon: LucideIcon;
@@ -44,6 +52,26 @@ function ServiceCard({
             </p>
           </div>
         </div>
+      </div>
+    </div>
+  );
+}
+
+function MobileServiceCard({
+  icon: Icon,
+  title,
+  description,
+}: ServiceCardProps) {
+  return (
+    <div className="flex flex-col bg-foreground rounded-3xl gap-6 select-none cursor-grab active:cursor-grabbing">
+      <div className="w-full py-24 flex items-center justify-center">
+        <Icon className="w-16 h-16 text-primary" />
+      </div>
+      <div className="flex flex-col gap-2 px-8 pb-8">
+        <h3 className="text-2xl font-[Outfit] text-text-primary">{title}</h3>
+        <p className="text-text-secondary text-lg w-full leading-relaxed">
+          {description}
+        </p>
       </div>
     </div>
   );
@@ -94,7 +122,7 @@ export default function ServiceSection() {
   return (
     <section ref={sectionRef}>
       {/* Headline: sticky with low z-index so cards scroll over it */}
-      <div className="lg:sticky top-0 z-0 px-16 pb-12 lg:pt-80 lg:pb-[34rem] text-center">
+      <div className="lg:sticky top-0 z-0 px-8 lg:px-16 pb-12 pt-20 lg:pt-80 lg:pb-[34rem] text-center">
         <motion.h2
           style={{ opacity, filter: blur }}
           className="text-5xl md:text-9xl tracking-tight leading-none"
@@ -104,11 +132,40 @@ export default function ServiceSection() {
           เราพร้อมลุย
         </motion.h2>
       </div>
-      {/* Cards: relative z-index above the headline */}
-      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-3 gap-8 justify-center px-8 md:px-16 pb-80 mx-auto">
+      {/* Desktop Cards: relative z-index above the headline */}
+      <div className="relative z-10 hidden lg:grid grid-cols-3 gap-8 justify-center px-16 pb-80 mx-auto">
         {services.map((service) => (
           <ServiceCard key={service.title} {...service} />
         ))}
+      </div>
+
+      {/* Mobile Slider */}
+      <div className="lg:hidden relative z-10 pl-8 pb-32 overflow-hidden">
+        <Swiper
+          modules={[Navigation]}
+          spaceBetween={24}
+          slidesPerView={1.2}
+          navigation={{
+            prevEl: ".swiper-button-prev-custom",
+            nextEl: ".swiper-button-next-custom",
+          }}
+          className="overflow-visible"
+        >
+          {services.map((service) => (
+            <SwiperSlide key={service.title}>
+              <MobileServiceCard {...service} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+        <div className="flex justify-end gap-3 mt-12 pr-8">
+          <button className="swiper-button-prev-custom w-14 h-14 rounded-full bg-foreground/[0.05] flex items-center justify-center transition-colors hover:bg-foreground/[0.08] [&.swiper-button-disabled]:opacity-20 [&.swiper-button-disabled]:cursor-not-allowed">
+            <ChevronLeftIcon className="w-6 h-6" />
+          </button>
+          <button className="swiper-button-next-custom w-14 h-14 rounded-full bg-foreground/[0.05] flex items-center justify-center transition-colors hover:bg-foreground/[0.08] [&.swiper-button-disabled]:opacity-20 [&.swiper-button-disabled]:cursor-not-allowed">
+            <ChevronRightIcon className="w-6 h-6" />
+          </button>
+        </div>
       </div>
     </section>
   );

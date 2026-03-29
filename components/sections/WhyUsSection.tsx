@@ -50,7 +50,7 @@ export default function WhyUsSection() {
               item.className
             }
           >
-            <div className="w-full bg-foreground aspect-square rounded-3xl" />
+            <div className="w-full bg-foreground aspect-square max-w-md mx-auto rounded-3xl" />
             <div className="w-full m-auto px-6 py-8 text-center sm:text-start lg:text-center">
               <h3 className="text-2xl md:text-3xl mb-2 md:mb-4">
                 {item.title}
