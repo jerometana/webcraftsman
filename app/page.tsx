@@ -14,7 +14,7 @@ export default async function Home() {
   const posts = await getLatestPosts(3);
 
   return (
-    <main className="min-h-screen font-sans selection:bg-blue-100 selection:text-blue-900">
+    <main className="relative min-h-screen font-sans selection:bg-blue-100 selection:text-blue-900">
       <HeroSection />
       <WhyUsSection />
       <ServiceSection />
