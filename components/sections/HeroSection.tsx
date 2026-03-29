@@ -6,19 +6,19 @@ import { ArrowRight } from "lucide-react";
 export default function HeroSection() {
   return (
     <section className="relative h-screen flex flex-col items-center pt-30 px-5 overflow-hidden">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="text-center max-w-4xl"
-      >
+      <div className="text-center max-w-4xl">
         <span className="inline-block px-4 py-1.5 mb-6 text-xl tracking-wider text-primary uppercase">
           ออกแบบและพัฒนาเว็บไซต์สมัยใหม่
         </span>
-        <h1 className="text-6xl md:text-[80px] tracking-tight leading-tight mb-4">
+        <motion.h1
+          initial={{ opacity: 0, y: 20, filter: "blur(16px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-6xl md:text-[80px] tracking-tight leading-tight mb-4"
+        >
           เล่าเรื่องผ่านดีไซน์ <br />
           <span className="text-text-secondary">เพื่อผลลัพธ์ที่จับต้องได้</span>
-        </h1>
+        </motion.h1>
         <p className="text-text-secondary text-2xl mb-16">
           พรีเมียม ลื่นไหล และปิดการขายได้จริง
         </p>
@@ -28,7 +28,7 @@ export default function HeroSection() {
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }

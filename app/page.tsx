@@ -8,6 +8,7 @@ import TestimonialSection from "@/components/sections/TestimonialSection";
 import StorySection from "@/components/sections/StorySection";
 import Footer from "@/components/Footer";
 import { getLatestPosts } from "@/lib/sanity";
+import CtaSection from "@/components/sections/CtaSection";
 
 export default async function Home() {
   const posts = await getLatestPosts(3);
@@ -28,6 +29,7 @@ export default async function Home() {
       <HowItWorksSection />
       <TestimonialSection />
       <StorySection posts={posts} />
+      <CtaSection />
       <Footer />
     </main>
   );

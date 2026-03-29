@@ -21,8 +21,8 @@ export default function WhyUsSection() {
       </motion.div>
       <div className="grid grid-cols-3 gap-8">
         <motion.div
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 100, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 1, ease: "easeOut" }}
           viewport={{ once: true }}
         >
@@ -35,8 +35,8 @@ export default function WhyUsSection() {
           </div>
         </motion.div>
         <motion.div
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 100, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ delay: 0.2, duration: 1, ease: "easeOut" }}
           viewport={{ once: true }}
           className="mt-8"
@@ -50,8 +50,8 @@ export default function WhyUsSection() {
           </div>
         </motion.div>
         <motion.div
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 100, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ delay: 0.4, duration: 1, ease: "easeOut" }}
           viewport={{ once: true }}
         >
