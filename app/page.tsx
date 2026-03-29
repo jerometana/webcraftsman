@@ -18,14 +18,20 @@ export default async function Home() {
       <HeroSection />
       <WhyUsSection />
       <ServiceSection />
-      <ScrollExpansion>
-        <h2 className="text-4xl md:text-[80px] mb-6">
-          ให้ผลงาน
-          <br />
-          เป็นเครื่องพิสูจน์
-        </h2>
-      </ScrollExpansion>
-      <ProjectsSection />
+      <div className="h-[200vh] relative">
+        <div className="absolute top-0 w-full z-10">
+          <ScrollExpansion>
+            <h2 className="text-4xl md:text-[80px] mb-6">
+              ให้ผลงาน
+              <br />
+              เป็นเครื่องพิสูจน์
+            </h2>
+          </ScrollExpansion>
+        </div>
+        <div className="sticky top-20">
+          <ProjectsSection />
+        </div>
+      </div>
       <HowItWorksSection />
       <TestimonialSection />
       <StorySection posts={posts} />

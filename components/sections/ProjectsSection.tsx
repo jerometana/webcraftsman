@@ -25,6 +25,16 @@ const projects = [
     image: "/projects/amazing-friend/website.png",
     logo: "/projects/amazing-friend/logo.png",
   },
+  // {
+  //   name: "Data Echooo",
+  //   image: "/projects/data-echooo/website.png",
+  //   logo: "/projects/data-echooo/logo.png",
+  // },
+  // {
+  //   name: "Amazing Friend",
+  //   image: "/projects/amazing-friend/website.png",
+  //   logo: "/projects/amazing-friend/logo.png",
+  // },
 ];
 
 export default function ProjectsSection() {

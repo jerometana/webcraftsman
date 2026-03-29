@@ -11,7 +11,7 @@ export default function HowItWorksSection() {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="w-full"
       >
-        <div className="sticky top-[20rem]">
+        <div className="sticky my-48 top-[20rem]">
           <span className="inline-block px-4 py-1.5 mb-4 text-lg font-semibold tracking-widest text-blue-600 uppercase">
             วิธีรับบริการ
           </span>

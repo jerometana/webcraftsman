@@ -12,7 +12,7 @@ interface ScrollExpansionProps {
 
 export default function ScrollExpansion({
   children,
-  containerClassName = "bg-black flex flex-col items-center justify-center text-white relative shadow-2xl overflow-hidden",
+  containerClassName = "bg-primary flex flex-col items-center justify-center text-white relative shadow-2xl overflow-hidden",
   contentClassName = "z-10 text-center px-4 max-w-3xl",
 }: ScrollExpansionProps) {
   const sectionRef = useRef<HTMLElement>(null);
@@ -62,7 +62,7 @@ export default function ScrollExpansion({
     <div className="overflow-x-hidden">
       {/* --- Section ที่ทำ Scroll Expand Effect --- */}
       <section ref={sectionRef} className="h-screen relative">
-        <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
+        <div className="sticky top-0 h-screen bg-background w-full flex items-center justify-center overflow-hidden">
           {/* ใช้ motion.div และแนบ Style ที่ได้จาก useTransform */}
           <motion.div
             className={containerClassName}
@@ -72,7 +72,7 @@ export default function ScrollExpansion({
               borderRadius: borderRadius,
             }}
           >
-            <div className="w-screen h-screen absolute top-0 left-0">
+            {/* <div className="w-screen h-screen absolute top-0 left-0">
               <DarkVeil
                 hueShift={15}
                 noiseIntensity={0}
@@ -82,7 +82,7 @@ export default function ScrollExpansion({
                 warpAmount={0}
                 resolutionScale={1}
               />
-            </div>
+            </div> */}
             {/* เนื้อหาด้านในใช้ motion.div เช่นกัน */}
             <motion.div
               className={contentClassName}
