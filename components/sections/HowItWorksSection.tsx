@@ -2,6 +2,86 @@
 
 import { motion } from "motion/react";
 
+interface StepCardProps {
+  step: string;
+  title: string;
+  description: string;
+  variant?: "primary" | "foreground";
+  rotation?: string;
+  topOffset?: string;
+}
+
+function StepCard({
+  step,
+  title,
+  description,
+  variant = "primary",
+  rotation = "0deg",
+  topOffset = "0",
+}: StepCardProps) {
+  const isPrimary = variant === "primary";
+
+  return (
+    <div className="sticky top-32">
+      <div
+        className={`w-md h-[600px] rounded-3xl p-16 text-center flex flex-col justify-between backdrop-blur-xl ${
+          isPrimary ? "bg-primary text-white" : "bg-foreground/90"
+        }`}
+        style={{ rotate: rotation, marginTop: topOffset }}
+      >
+        <p className="text-4xl font-[Outfit]">{title}</p>
+        <p
+          className={`text-[128px] font-[Manrope] font-semibold tracking-tighter ${
+            isPrimary ? "" : "text-primary"
+          }`}
+        >
+          {step}
+        </p>
+        <p className={`text-xl ${isPrimary ? "" : "text-text-secondary"}`}>
+          {description}
+        </p>
+      </div>
+    </div>
+  );
+}
+
+const steps: Omit<StepCardProps, "rotation" | "topOffset">[] = [
+  {
+    step: "01",
+    title: "Fill the form",
+    description:
+      "เริ่มต้นง่ายๆ เพียงบอกเป้าหมาย และความต้องการของคุณผ่าน แบบฟอร์มสั้น ๆ",
+    variant: "primary",
+  },
+  {
+    step: "02",
+    title: "Discovery",
+    description: "เราออกแบบ Roadmap ที่ผสมผสานงานดีไซน์ และกลยุทธ์การขาย",
+    variant: "foreground",
+  },
+  {
+    step: "03",
+    title: "Roadmap",
+    description: "เราออกแบบ Roadmap ที่ผสมผสานงานดีไซน์ และกลยุทธ์การขาย",
+    variant: "primary",
+  },
+  {
+    step: "04",
+    title: "Craft 'em",
+    description: "เราออกแบบ Roadmap ที่ผสมผสานงานดีไซน์ และกลยุทธ์การขาย",
+    variant: "foreground",
+  },
+  {
+    step: "05",
+    title: "Launch",
+    description: "ส่งมอบเว็บไซต์ พร้อมดูแลเป็นพาร์ทเนอร์ เคียงข้างคุณตลอดไป",
+    variant: "primary",
+  },
+];
+
+const rotations = ["-1deg", "2deg", "-1.5deg", "0deg", "-1.5deg"];
+const topOffsets = ["0", "1rem", "2rem", "3rem", "4rem"];
+
 export default function HowItWorksSection() {
   return (
     <section className="py-32 max-w-7xl flex px-4 mx-auto">
@@ -12,7 +92,7 @@ export default function HowItWorksSection() {
         className="w-full"
       >
         <div className="sticky my-48 top-[20rem]">
-          <span className="inline-block px-4 py-1.5 mb-4 text-lg font-semibold tracking-widest text-blue-600 uppercase">
+          <span className="inline-block px-4 py-1.5 mb-4 text-lg font-semibold tracking-widest text-primary uppercase">
             วิธีรับบริการ
           </span>
           <h2 className="text-4xl md:text-6xl tracking-tight leading-tight mb-16">
@@ -22,62 +102,14 @@ export default function HowItWorksSection() {
         </div>
       </motion.div>
       <div className="flex flex-col items-end w-full gap-16">
-        <div className="sticky top-32">
-          <div className="w-md h-[600px] bg-primary -rotate-1 rounded-3xl p-16 text-center flex flex-col justify-between text-white">
-            <p className="text-4xl font-[Outfit]">Fill the form</p>
-            <p className="text-[128px] font-[Manrope] font-semibold tracking-tighter">
-              01
-            </p>
-            <p className="text-xl">
-              เริ่มต้นง่ายๆ เพียงบอกเป้าหมาย และความต้องการของคุณผ่าน
-              แบบฟอร์มสั้น ๆ
-            </p>
-          </div>
-        </div>
-        <div className="sticky top-32">
-          <div className="w-md h-[600px] mt-4 bg-foreground rotate-2 rounded-3xl p-16 text-center flex flex-col justify-between">
-            <p className="text-4xl font-[Outfit]">Discovery</p>
-            <p className="text-[128px] font-[Manrope] font-semibold tracking-tighter text-primary">
-              02
-            </p>
-            <p className="text-xl text-text-secondary">
-              เราออกแบบ Roadmap ที่ผสมผสานงานดีไซน์ และกลยุทธ์การขาย
-            </p>
-          </div>
-        </div>
-        <div className="sticky top-32">
-          <div className="w-md h-[600px] mt-8 bg-primary -rotate-[1.5deg] rounded-3xl p-16 text-center flex flex-col justify-between text-white">
-            <p className="text-4xl font-[Outfit]">Roadmap</p>
-            <p className="text-[128px] font-[Manrope] font-semibold tracking-tighter">
-              03
-            </p>
-            <p className="text-xl">
-              เราออกแบบ Roadmap ที่ผสมผสานงานดีไซน์ และกลยุทธ์การขาย
-            </p>
-          </div>
-        </div>
-        <div className="sticky top-32">
-          <div className="w-md h-[600px] mt-12 bg-foreground rounded-3xl p-16 text-center flex flex-col justify-between">
-            <p className="text-4xl font-[Outfit]">Craft ’em</p>
-            <p className="text-[128px] font-[Manrope] font-semibold tracking-tighter text-primary">
-              04
-            </p>
-            <p className="text-xl text-text-secondary">
-              เราออกแบบ Roadmap ที่ผสมผสานงานดีไซน์ และกลยุทธ์การขาย
-            </p>
-          </div>
-        </div>
-        <div className="sticky top-32">
-          <div className="w-md h-[600px] mt-16 bg-primary -rotate-[1.5deg] rounded-3xl p-16 text-center flex flex-col justify-between text-white">
-            <p className="text-4xl font-[Outfit]">Launch</p>
-            <p className="text-[128px] font-[Manrope] font-semibold tracking-tighter">
-              05
-            </p>
-            <p className="text-xl">
-              ส่งมอบเว็บไซต์ พร้อมดูแลเป็นพาร์ทเนอร์ เคียงข้างคุณตลอดไป
-            </p>
-          </div>
-        </div>
+        {steps.map((step, i) => (
+          <StepCard
+            key={step.step}
+            {...step}
+            rotation={rotations[i]}
+            topOffset={topOffsets[i]}
+          />
+        ))}
       </div>
     </section>
   );
