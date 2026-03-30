@@ -114,6 +114,42 @@ export async function getLatestPosts(limit: number): Promise<Post[]> {
   }
 }
 
+export async function getPaginatedPosts(
+  start: number,
+  limit: number,
+): Promise<Post[]> {
+  const query = `
+    *[_type == "post"] | order(publishedAt desc)[${start}...${start + limit}] {
+      _id,
+      title,
+      slug,
+      publishedAt,
+      excerpt,
+      mainImage {
+        asset,
+        alt
+      },
+      author-> {
+        name,
+        image {
+          asset
+        }
+      },
+      categories[]-> {
+        title,
+        slug
+      }
+    }
+  `;
+  try {
+    return await client.fetch(query);
+  } catch (error) {
+    console.error("Error fetching posts:", error);
+    return [];
+  }
+}
+
+
 // Fetch a single blog post by slug
 export async function getPostBySlug(slug: string): Promise<Post | null> {
   const query = `

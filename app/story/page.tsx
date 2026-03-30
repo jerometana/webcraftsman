@@ -1,9 +1,8 @@
-import { StoryCard } from "@/components/StoryCard";
-import { getAllPosts } from "@/lib/sanity";
-import Link from "next/link";
+import { getPaginatedPosts } from "@/lib/sanity";
+import { StoryList } from "@/components/StoryList";
 
 export default async function StoryPage() {
-  const posts = await getAllPosts();
+  const posts = await getPaginatedPosts(0, 5); // Initial fetch
   const displayItems =
     posts.length > 0
       ? posts.map((post) => ({
@@ -21,7 +20,7 @@ export default async function StoryPage() {
       : [];
 
   return (
-    <main className="py-32 px-4 max-w-7xl mx-auto flex flex-col items-start">
+    <main className="py-32 px-4 max-w-7xl mx-auto flex flex-col items-start min-h-screen">
       <div className="text-center mb-16 mx-auto">
         <span className="inline-block px-4 py-1.5 mb-4 text-xl font-[Outfit] font-semibold text-primary">
           Story
@@ -32,29 +31,7 @@ export default async function StoryPage() {
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 w-full max-w-7xl">
-        {displayItems.map((item, idx) => {
-          const isFirst = idx === 0;
-          return (
-            <StoryCard key={idx} item={item} idx={idx} isFirst={isFirst} />
-          );
-        })}
-      </div>
-
-      {/* <div className="w-full grid grid-cols-3 gap-8 mt-16">
-        <div>
-          <div className="aspect-[9/14] w-full rounded-4xl bg-foreground"></div>
-          <div className="p-8 text-2xl">ฟหกด</div>
-        </div>
-        <div>
-          <div className="aspect-[9/14] w-full rounded-4xl bg-foreground"></div>
-          <div className="p-8 text-2xl">ฟหกด</div>
-        </div>
-        <div>
-          <div className="aspect-[9/14] w-full rounded-4xl bg-foreground"></div>
-          <div className="p-8 text-2xl">ฟหกด</div>
-        </div>
-      </div> */}
+      <StoryList initialPosts={displayItems} />
     </main>
   );
 }
