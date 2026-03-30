@@ -16,8 +16,8 @@ export default async function Home() {
   return (
     <main className="relative min-h-screen font-sans selection:bg-blue-100 selection:text-blue-900">
       <HeroSection />
-      <WhyUsSection />
       <ServiceSection />
+      <WhyUsSection />
       <div className="lg:h-[200vh] relative">
         <div className="lg:absolute top-0 w-full z-10">
           <ScrollExpansion>

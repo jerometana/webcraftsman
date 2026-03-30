@@ -16,9 +16,9 @@ const projects = [
     logo: "/projects/amazing-friend/logo.png",
   },
   {
-    name: "Data Echooo",
-    image: "/projects/data-echooo/website.png",
-    logo: "/projects/data-echooo/logo.png",
+    name: "Ultherapy Prime",
+    image: "/projects/ultherapy-prime/website.png",
+    logo: "/projects/ultherapy-prime/logo.png",
   },
   {
     name: "Amazing Friend",

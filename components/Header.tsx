@@ -11,7 +11,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { href: "#service", label: "บริการ" },
+    { href: "/#service", label: "บริการ" },
     { href: "/#project", label: "ผลงาน" },
     { href: "/story", label: "เรื่องราว" },
   ];

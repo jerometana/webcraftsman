@@ -90,7 +90,7 @@ const services: ServiceCardProps[] = [
     icon: CodeIcon,
     title: "Web Development",
     description:
-      "ปลุกงานดีไซน์ให้มีชีวิตด้วยการเขียนโค้ดที่ประณีต เว็บไซต์ที่โหลดไว ไร้รอยต่อ และพร้อมทำงานหนักเพื่อขับเคลื่อนการเติบโตให้ธุรกิจของคุณในทุกวินาที",
+      "ปลุกงานดีไซน์ให้มีชีวิตด้วยการเขียนโค้ดที่ประณีต เว็บไซต์ที่โหลดไว ไร้รอยต่อ",
     rotation: "1deg",
     topOffset: "64rem",
   },
@@ -98,7 +98,7 @@ const services: ServiceCardProps[] = [
     icon: ListChecksIcon,
     title: "Design Audit",
     description:
-      "เจาะลึกเว็บไซต์เดิมของคุณด้วยมุมมองมืออาชีพ วิเคราะห์ทุกจุดที่ขวางทาง Conversion เพื่อเปลี่ยนดีไซน์ที่ติดขัดให้กลายเป็นเครื่องมือปิดการขายที่มีประสิทธิภาพสูงสุด",
+      "เจาะลึกเว็บไซต์เดิมของคุณด้วยมุมมองมืออาชีพ วิเคราะห์ทุกจุดที่ขวางทาง Conversion",
     rotation: "-2deg",
     topOffset: "128rem",
   },
@@ -120,7 +120,7 @@ export default function ServiceSection() {
   );
 
   return (
-    <section ref={sectionRef}>
+    <section id="service" ref={sectionRef}>
       {/* Headline: sticky with low z-index so cards scroll over it */}
       <div className="lg:sticky top-0 z-0 px-8 lg:px-16 pb-12 pt-20 lg:pt-80 lg:pb-[34rem] text-center">
         <motion.h2
